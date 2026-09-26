@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shubh Vania | Associate Project Manager</title>
+<meta name="description" content="Shubh Vania: Associate Project Manager at Revenew International. Rice University Engineering Management graduate delivering measurable impact with Power BI, SQL, Python and process automation.">
+<meta property="og:title" content="Shubh Vania | Associate Project Manager">
+<meta property="og:description" content="Project management, analytics and automation that turn data into measurable business results.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #2b3b61;        /* pastel navy */
+    --bg-deep: #22304f;   /* sidebar navy */
+    --panel: rgba(255,255,255,.06);
+    --panel-2: rgba(255,255,255,.10);
+    --line: rgba(255,255,255,.12);
+    --white: #ffffff;
+    --soft: #c9d3ea;      /* body copy on navy */
+    --muted: #9fadcc;
+    --green: #8fe3b0;     /* pastel mint green: sub headers */
+    --green-2: #5fd394;   /* stronger green: numbers & accents */
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: var(--white); line-height: 1.55;
+    background:
+      radial-gradient(900px 500px at 85% -10%, rgba(143,227,176,.14), transparent 60%),
+      radial-gradient(700px 500px at 20% 110%, rgba(143,190,255,.12), transparent 60%),
+      var(--bg);
+    background-attachment: fixed;
+  }
+  body::before { /* subtle blueprint grid */
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: linear-gradient(to bottom, #000 0%, transparent 70%);
+  }
+  a { color: inherit; }
+  ::selection { background: var(--green); color: var(--bg-deep); }
+
+  /* ---------------- Sidebar ---------------- */
+  aside {
+    position: fixed; inset: 0 auto 0 0; width: 260px; z-index: 2;
+    background: var(--bg-deep); border-right: 1px solid var(--line);
+    padding: 30px 20px; display: flex; flex-direction: column; overflow-y: auto;
+  }
+  .avatar {
+    width: 76px; height: 76px; border-radius: 22px; display: grid; place-items: center;
+    font-weight: 800; font-size: 26px; color: var(--bg-deep); overflow: hidden;
+    background: linear-gradient(135deg, var(--green), #b9f0cf);
+    box-shadow: 0 0 0 4px rgba(143,227,176,.18), 0 12px 30px rgba(0,0,0,.25);
+  }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; }
+  aside h1 { font-size: 22px; font-weight: 800; margin-top: 16px; letter-spacing: -.01em; }
+  aside .role { font-size: 13px; color: var(--green); font-weight: 700; margin-top: 2px; }
+  aside .loc { font-size: 12.5px; color: var(--muted); margin-top: 6px; }
+  .status { margin-top: 14px; display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; color: var(--white);
+    background: rgba(143,227,176,.12); border: 1px solid rgba(143,227,176,.35); padding: 5px 10px; border-radius: 99px; width: fit-content; }
+  .status i { width: 8px; height: 8px; border-radius: 50%; background: var(--green-2); box-shadow: 0 0 0 0 rgba(95,211,148,.7); animation: ping 2s infinite; }
+  @keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(95,211,148,.6); } 80%,100% { box-shadow: 0 0 0 8px rgba(95,211,148,0); } }
+  aside nav { margin-top: 28px; display: flex; flex-direction: column; gap: 3px; }
+  aside nav a { text-decoration: none; padding: 10px 12px; border-radius: 10px; font-size: 14px; font-weight: 600; color: var(--soft);
+    display: flex; align-items: center; gap: 10px; border: 1px solid transparent; }
+  aside nav a span { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); }
+  aside nav a:hover { background: var(--panel); color: var(--white); }
+  aside nav a.active { background: var(--panel-2); color: var(--white); border-color: var(--line); }
+  aside nav a.active span { color: var(--green); }
+  aside .links { margin-top: auto; padding-top: 24px; display: flex; flex-direction: column; gap: 10px; }
+  .side-btn { text-decoration: none; text-align: center; font-weight: 700; font-size: 13.5px; padding: 10px; border-radius: 10px; }
+  .side-btn.primary { background: var(--green); color: var(--bg-deep); }
+  .side-btn.primary:hover { background: #a9ecc3; }
+  .side-btn.ghost { border: 1px solid var(--line); color: var(--white); }
+  .side-btn.ghost:hover { background: var(--panel); }
+
+  /* ---------------- Main ---------------- */
+  main { margin-left: 260px; padding: 44px 44px 60px; max-width: 1240px; position: relative; z-index: 1; }
+  section { margin-bottom: 64px; scroll-margin-top: 28px; }
+  .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--green); font-weight: 500; }
+  h2 { font-size: clamp(24px, 3vw, 30px); font-weight: 800; letter-spacing: -.02em; margin: 6px 0 22px; }
+  h3 { font-weight: 800; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 22px; backdrop-filter: blur(4px); }
+
+  /* Hero */
+  .hero h2.big { font-size: clamp(34px, 5.2vw, 58px); line-height: 1.05; letter-spacing: -.035em; margin: 12px 0 18px; max-width: 900px; }
+  .hero h2.big em { font-style: normal; color: var(--green); }
+  .hero .lede { color: var(--soft); font-size: 17px; max-width: 760px; }
+  .hero .lede b { color: var(--white); }
+  .glance { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; margin-top: 28px; background: var(--line); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+  .glance div { background: var(--bg-deep); padding: 14px 18px; }
+  .glance small { display: block; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--green); font-weight: 700; }
+  .glance b { font-size: 14.5px; font-weight: 700; }
+
+  /* KPIs */
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(148px, 1fr)); gap: 12px; margin-top: 18px; }
+  .kpi { position: relative; overflow: hidden; }
+  .kpi::after { content: ""; position: absolute; right: -30px; top: -30px; width: 110px; height: 110px; border-radius: 50%; background: radial-gradient(circle, rgba(143,227,176,.18), transparent 70%); }
+  .kpi .num { font-size: 34px; font-weight: 800; letter-spacing: -.03em; line-height: 1.1; }
+  .kpi .lbl { font-size: 13.5px; font-weight: 700; color: var(--green); margin-top: 4px; }
+  .kpi .ctx { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+
+  /* Case studies */
+  .cases { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 16px; }
+  .case { display: flex; flex-direction: column; transition: transform .2s, border-color .2s, background .2s; }
+  .case:hover { transform: translateY(-4px); border-color: rgba(143,227,176,.45); background: var(--panel-2); }
+  .case .top { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+  .case .tag { font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--green); }
+  .case .org { font-size: 11.5px; font-weight: 700; color: var(--white); background: var(--panel-2); border: 1px solid var(--line); padding: 3px 10px; border-radius: 99px; white-space: nowrap; }
+  .case h3 { font-size: 19px; margin: 12px 0 14px; letter-spacing: -.01em; }
+  .car { display: grid; gap: 10px; }
+  .car div { display: grid; grid-template-columns: 74px 1fr; gap: 10px; font-size: 14px; color: var(--soft); }
+  .car strong { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--green); padding-top: 2px; }
+  .impact { margin-top: 18px; padding: 12px 14px; border-radius: 12px; background: rgba(143,227,176,.12); border: 1px solid rgba(143,227,176,.3); font-weight: 800; font-size: 15px; display: flex; gap: 10px; align-items: center; }
+  .impact::before { content: "↗"; color: var(--green-2); font-size: 18px; }
+  .stack { margin-top: auto; padding-top: 16px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .stack span { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--soft); border: 1px solid var(--line); padding: 3px 9px; border-radius: 6px; }
+
+  /* Experience timeline */
+  .timeline { position: relative; padding-left: 30px; }
+  .timeline::before { content: ""; position: absolute; left: 8px; top: 10px; bottom: 10px; width: 2px; background: linear-gradient(var(--green), rgba(143,227,176,.1)); }
+  .job { position: relative; margin-bottom: 16px; }
+  .job::before { content: ""; position: absolute; left: -29px; top: 26px; width: 16px; height: 16px; border-radius: 50%; background: var(--bg); border: 3px solid var(--green); }
+  .job.earlier::before { display: none; }
+  .job.current::before { background: var(--green); box-shadow: 0 0 0 6px rgba(143,227,176,.2); }
+  .job .head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 6px 16px; }
+  .job h3 { font-size: 18px; }
+  .job .when { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted); }
+  .job .co { font-size: 14.5px; font-weight: 700; color: var(--green); margin-top: 2px; }
+  .job .co span { color: var(--muted); font-weight: 500; }
+  .job .blurb { font-size: 14px; color: var(--soft); margin-top: 8px; font-style: italic; }
+  .job ul { list-style: none; margin-top: 12px; display: grid; gap: 8px; }
+  .job li { position: relative; padding-left: 20px; font-size: 14.5px; color: var(--soft); }
+  .job li::before { content: ""; position: absolute; left: 0; top: 9px; width: 8px; height: 8px; border-radius: 2px; background: var(--green); transform: rotate(45deg); }
+  .job li b { color: var(--white); }
+  .job.earlier { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+
+  /* Skills */
+  .skills { display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; }
+  .sgroup + .sgroup { margin-top: 20px; }
+  .sgroup h4 { font-size: 13px; font-weight: 800; color: var(--green); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 10px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chips span { font-size: 13.5px; font-weight: 600; padding: 6px 13px; border-radius: 99px; background: var(--panel); border: 1px solid var(--line); }
+  .chips.core span { background: rgba(143,227,176,.14); border-color: rgba(143,227,176,.4); color: var(--white); }
+  .certs { display: grid; gap: 10px; }
+  .cert { display: flex; gap: 12px; align-items: center; padding: 10px 12px; border-radius: 12px; background: var(--panel); border: 1px solid var(--line); font-size: 14px; font-weight: 600; }
+  .cert i { flex: none; width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center; font-style: normal; background: rgba(143,227,176,.16); color: var(--green); font-size: 14px; }
+
+  /* Education */
+  .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+  .edu { display: flex; gap: 16px; align-items: flex-start; }
+  .edu .ic { width: 52px; height: 52px; border-radius: 14px; background: rgba(143,227,176,.14); border: 1px solid rgba(143,227,176,.3); display: grid; place-items: center; font-size: 24px; flex: none; }
+  .edu h3 { font-size: 18px; }
+  .edu .deg { color: var(--green); font-weight: 700; font-size: 14.5px; }
+  .edu .yr { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .langs { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+  .langs div { flex: 1 1 120px; padding: 12px 14px; border-radius: 12px; background: var(--panel); border: 1px solid var(--line); }
+  .langs b { display: block; font-size: 15px; }
+  .langs span { font-size: 12px; color: var(--green); font-weight: 600; }
+
+  /* Contact */
+  .cta { position: relative; overflow: hidden; padding: 40px; border-radius: 24px; border: 1px solid rgba(143,227,176,.35);
+    background: linear-gradient(135deg, rgba(143,227,176,.16), rgba(255,255,255,.04) 60%); }
+  .cta h2 { font-size: clamp(26px, 3.6vw, 38px); margin: 8px 0 10px; max-width: 700px; }
+  .cta p { color: var(--soft); max-width: 600px; }
+  .cta .btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+  .btn { text-decoration: none; font-weight: 800; font-size: 15px; padding: 13px 22px; border-radius: 12px; display: inline-flex; gap: 8px; align-items: center; }
+  .btn.primary { background: var(--green); color: var(--bg-deep); }
+  .btn.primary:hover { background: #a9ecc3; }
+  .btn.ghost { border: 1px solid rgba(255,255,255,.3); color: var(--white); }
+  .btn.ghost:hover { background: var(--panel); }
+  .copy { cursor: pointer; font-family: inherit; background: none; }
+  footer { color: var(--muted); font-size: 12.5px; margin-top: 26px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+  /* Reveal on scroll */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+
+  /* Mobile */
+  @media (max-width: 960px) {
+    aside { position: static; width: auto; padding: 22px 16px; border-right: 0; border-bottom: 1px solid var(--line); }
+    aside nav { flex-direction: row; flex-wrap: wrap; margin-top: 18px; }
+    aside nav a { padding: 8px 10px; font-size: 13px; }
+    aside .links { flex-direction: row; flex-wrap: wrap; padding-top: 16px; }
+    .side-btn { flex: 1 1 140px; }
+    main { margin-left: 0; padding: 28px 16px 48px; }
+    .skills { grid-template-columns: 1fr; }
+    .cases { grid-template-columns: 1fr; }
+    .cta { padding: 26px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<aside>
+  <!-- To use a headshot: upload photo.jpg to the repo, then replace SV below with <img src="photo.jpg" alt="Shubh Vania"> -->
+  <div class="avatar">SV</div>
+  <h1>Shubh Vania</h1>
+  <div class="role">Associate Project Manager</div>
+  <div class="loc">Revenew International · Houston, TX</div>
+  <div class="status"><i></i>Open to connect</div>
+  <nav>
+    <a href="#overview" class="active"><span>01</span>Overview</a>
+    <a href="#impact"><span>02</span>Impact</a>
+    <a href="#work"><span>03</span>Case Studies</a>
+    <a href="#experience"><span>04</span>Experience</a>
+    <a href="#skills"><span>05</span>Skills</a>
+    <a href="#education"><span>06</span>Education</a>
+    <a href="#contact"><span>07</span>Contact</a>
+  </nav>
+  <div class="links">
+    <a class="side-btn primary" href="mailto:shubhvania17@gmail.com">Email me</a>
+    <a class="side-btn ghost" href="https://www.linkedin.com/in/shubhvania" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <!-- After uploading resume.pdf to the repo, remove the two comment markers on the next line to show a résumé button -->
+    <!-- <a class="side-btn ghost" href="resume.pdf" target="_blank">Download résumé ↓</a> -->
+  </div>
+</aside>
+
+<main>
+  <!-- ============ 01 OVERVIEW ============ -->
+  <section id="overview" class="hero">
+    <div class="eyebrow">Project Management · Analytics · Automation</div>
+    <h2 class="big">I turn complex data and messy processes into <em>measurable business results.</em></h2>
+    <p class="lede">Associate Project Manager at <b>Revenew International</b>, a cost recovery and contract compliance leader that has reviewed <b>$6.2T+</b> in client spend for Fortune 100 companies. Rice University <b>Engineering Management</b> graduate with a Mechanical Engineering foundation, bringing hands-on experience across ports, logistics, energy and finance, and a track record that includes a <b>$15.3M annual profit increase</b>.</p>
+
+    <div class="glance">
+      <div><small>Current role</small><b>Associate Project Manager</b></div>
+      <div><small>Education</small><b>M.Eng. Mgmt, Rice University</b></div>
+      <div><small>Core tools</small><b>SQL · Power BI · Python · Excel</b></div>
+      <div><small>Certified</small><b>CAEM · Six Sigma · Fortinet</b></div>
+      <div><small>Based in</small><b>Houston, Texas</b></div>
+    </div>
+  </section>
+
+  <!-- ============ 02 IMPACT ============ -->
+  <section id="impact">
+    <div class="eyebrow">By the numbers</div>
+    <h2>Impact at a glance</h2>
+    <div class="kpis">
+      <div class="card kpi reveal"><div class="num" data-count="15.3" data-prefix="$" data-suffix="M" data-dec="1">$15.3M</div><div class="lbl">Annual profit increase</div><div class="ctx">Port Houston</div></div>
+      <div class="card kpi reveal"><div class="num" data-count="17">17</div><div class="lbl">Projects delivered</div><div class="ctx">First 2 months at Revenew</div></div>
+      <div class="card kpi reveal"><div class="num" data-count="13">13</div><div class="lbl">Enterprise apps integrated</div><div class="ctx">IBM Maximo, Oracle EBS &amp; more</div></div>
+      <div class="card kpi reveal"><div class="num" data-count="200" data-suffix="+">200+</div><div class="lbl">Graduate students supported</div><div class="ctx">3 semesters at Rice</div></div>
+      <div class="card kpi reveal"><div class="num" data-count="40" data-suffix="%">40%</div><div class="lbl">Faster grading</div><div class="ctx">Automated tooling</div></div>
+      <div class="card kpi reveal"><div class="num" data-count="30" data-suffix="%">30%</div><div class="lbl">Less reporting time</div><div class="ctx">Power BI pipelines</div></div>
+    </div>
+  </section>
+
+  <!-- ============ 03 CASE STUDIES ============ -->
+  <section id="work">
+    <div class="eyebrow">Selected work</div>
+    <h2>Case studies</h2>
+    <div class="cases">
+      <article class="card case reveal">
+        <div class="top"><span class="tag">Systems Integration</span><span class="org">Port Houston</span></div>
+        <h3>Unifying 13 enterprise systems</h3>
+        <div class="car">
+          <div><strong>Challenge</strong><span>Disconnected enterprise platforms slowed workflows across engineering, IT and finance.</span></div>
+          <div><strong>Action</strong><span>Led integration of 13 applications including IBM Maximo and Oracle EBS, and wrote training materials to drive adoption.</span></div>
+        </div>
+        <div class="impact">Streamlined workflows and higher system adoption</div>
+        <div class="stack"><span>IBM Maximo</span><span>Oracle EBS</span><span>Change mgmt</span></div>
+      </article>
+
+      <article class="card case reveal">
+        <div class="top"><span class="tag">Business Intelligence</span><span class="org">Port Houston</span></div>
+        <h3>Real-time project KPI dashboards</h3>
+        <div class="car">
+          <div><strong>Challenge</strong><span>Stakeholders lacked a fast, shared view of project performance.</span></div>
+          <div><strong>Action</strong><span>Designed Power BI dashboards, reporting pipelines and Excel automation scripts to track KPIs across divisions.</span></div>
+        </div>
+        <div class="impact">30% less reporting time, 30% faster decisions</div>
+        <div class="stack"><span>Power BI</span><span>Excel</span><span>Automation</span></div>
+      </article>
+
+      <article class="card case reveal">
+        <div class="top"><span class="tag">Financial Modeling</span><span class="org">Rice University</span></div>
+        <h3>Investment feasibility with AI forecasting</h3>
+        <div class="car">
+          <div><strong>Challenge</strong><span>Multi-million-dollar engineering projects needed rigorous go/no-go analysis.</span></div>
+          <div><strong>Action</strong><span>Built NPV, IRR, EVA and MVA models and layered in machine-learning demand and cost forecasting.</span></div>
+        </div>
+        <div class="impact">Decision-ready models for energy, logistics &amp; manufacturing</div>
+        <div class="stack"><span>Python</span><span>Excel</span><span>Power BI</span><span>ML</span></div>
+      </article>
+
+      <article class="card case reveal">
+        <div class="top"><span class="tag">Automation</span><span class="org">Rice University</span></div>
+        <h3>Automated grading for 200+ students</h3>
+        <div class="car">
+          <div><strong>Challenge</strong><span>Grading and tracking for a 200+ student graduate course needed to be faster and more consistent.</span></div>
+          <div><strong>Action</strong><span>Developed automated grading tools and engagement dashboards for Engineering Economics (RCEL 505).</span></div>
+        </div>
+        <div class="impact">40% efficiency gain in grading</div>
+        <div class="stack"><span>Python</span><span>Excel</span><span>Dashboards</span></div>
+      </article>
+
+      <article class="card case reveal">
+        <div class="top"><span class="tag">Energy Transition</span><span class="org">Port Houston</span></div>
+        <h3>Battery storage &amp; emissions research</h3>
+        <div class="car">
+          <div><strong>Challenge</strong><span>Supporting Port Houston's $4B 2040 Plan to cut emissions and improve efficiency.</span></div>
+          <div><strong>Action</strong><span>Researched Battery Energy Storage Systems (BESS) and data-driven forecasting models.</span></div>
+        </div>
+        <div class="impact">Research input to a $4B long-term plan</div>
+        <div class="stack"><span>BESS</span><span>Forecasting</span><span>Sustainability</span></div>
+      </article>
+
+      <article class="card case reveal">
+        <div class="top"><span class="tag">Operations</span><span class="org">Adani Ports</span></div>
+        <h3>Ship-to-shore crane reliability</h3>
+        <div class="car">
+          <div><strong>Challenge</strong><span>Ship-to-shore crane downtime put timely cargo handling at risk.</span></div>
+          <div><strong>Action</strong><span>Analyzed gearboxes, hydraulic brakes and lubrication systems, and applied proactive maintenance.</span></div>
+        </div>
+        <div class="impact">15% reduction in downtime</div>
+        <div class="stack"><span>Reliability</span><span>Maintenance</span><span>Mechanical</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 04 EXPERIENCE ============ -->
+  <section id="experience">
+    <div class="eyebrow">Career path</div>
+    <h2>Experience</h2>
+    <div class="timeline">
+      <div class="card job current reveal">
+        <div class="head"><h3>Associate Project Manager</h3><span class="when">May 2026 – Present</span></div>
+        <div class="co">Revenew International <span>· Houston, TX</span></div>
+        <p class="blurb">Cost recovery and contract compliance leader: $6.2T+ in client spend reviewed and $2.25B recovered for Fortune 100 clients.</p>
+        <ul>
+          <li><b>Delivered 17 projects in the first two months</b> by automating manual steps and streamlining project flow.</li>
+          <li>Manage complex audit projects that uncover hidden dollars in client spend.</li>
+          <li>Drive workflow efficiency hands-on in SAP, bridging data, planning and client delivery.</li>
+        </ul>
+      </div>
+
+      <div class="card job reveal">
+        <div class="head"><h3>Research Analyst</h3><span class="when">Aug 2025 – May 2026</span></div>
+        <div class="co">Rice University <span>· Houston, TX</span></div>
+        <ul>
+          <li>Evaluated <b>multi-million-dollar project feasibility</b> with NPV, IRR, EVA and MVA models in Excel, Power BI and Python.</li>
+          <li>Applied <b>AI-driven forecasting and machine learning</b> to demand prediction and cost optimization across energy, logistics and manufacturing.</li>
+          <li>Assessed cost structures, risk profiles and investment strategies, linking operations to long-term economic value.</li>
+          <li>Built data-backed case studies on Tesla, Amazon and Walmart that shaped graduate curriculum.</li>
+        </ul>
+      </div>
+
+      <div class="card job reveal">
+        <div class="head"><h3>Graduate Teaching Assistant</h3><span class="when">Jan 2024 – May 2025</span></div>
+        <div class="co">Rice University <span>· Engineering Economics (RCEL 505)</span></div>
+        <ul>
+          <li>Co-delivered a graduate course to <b>200+ students across 3 semesters</b>.</li>
+          <li>Built automated grading tools that <b>improved efficiency by 40%</b>, plus dashboards for assignment tracking and engagement.</li>
+          <li>Designed Excel and Python models for capital budgeting and NPV analysis.</li>
+          <li>Co-created new modules on digital finance, ESG investing and decentralized systems.</li>
+        </ul>
+      </div>
+
+      <div class="card job reveal">
+        <div class="head"><h3>Intern</h3><span class="when">May 2024 – Aug 2024</span></div>
+        <div class="co">Port Houston <span>· Houston, TX</span></div>
+        <ul>
+          <li>Contributed to a <b>$15.3M annual profit increase</b>.</li>
+          <li>Led integration of <b>13 enterprise applications</b>, including IBM Maximo and Oracle EBS.</li>
+          <li>Built Power BI and Excel dashboards and automation that <b>cut reporting time by 30%</b> and sped decisions by 30%.</li>
+          <li>Researched battery energy storage and forecasting models for the <b>$4B 2040 Plan</b>.</li>
+        </ul>
+      </div>
+
+      <div class="job earlier reveal" style="padding:0">
+        <div class="card">
+          <div class="head"><h3>Intern</h3><span class="when">Sep 2022 – Jan 2023</span></div>
+          <div class="co">Adani Ports and SEZ <span>· Visakhapatnam</span></div>
+          <ul><li>Redesigned port workflows on an automation project, supporting on-time delivery.</li></ul>
+        </div>
+        <div class="card">
+          <div class="head"><h3>Industrial Engineer</h3><span class="when">Jul 2021 – Aug 2021</span></div>
+          <div class="co">Adani Ports and SEZ <span>· Mundra</span></div>
+          <ul><li><b>Reduced crane downtime 15%</b> through proactive maintenance.</li></ul>
+        </div>
+        <div class="card">
+          <div class="head"><h3>Business Development Intern</h3><span class="when">Apr 2020 – May 2020</span></div>
+          <div class="co">MyCaptain <span>· India</span></div>
+          <ul><li>Wrote a strategic sales plan that grew online-education engagement and enrollment.</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 05 SKILLS ============ -->
+  <section id="skills">
+    <div class="eyebrow">Toolkit</div>
+    <h2>Skills &amp; certifications</h2>
+    <div class="skills">
+      <div class="card reveal">
+        <div class="sgroup"><h4>Core stack</h4>
+          <div class="chips core"><span>SQL</span><span>Power BI</span><span>Python</span><span>Excel</span><span>SAP</span><span>Machine Learning</span></div></div>
+        <div class="sgroup"><h4>Project &amp; business</h4>
+          <div class="chips"><span>Project Management</span><span>Process Improvement</span><span>Workflow Automation</span><span>Cost Recovery &amp; Audit</span><span>Stakeholder Management</span></div></div>
+        <div class="sgroup"><h4>Finance &amp; analytics</h4>
+          <div class="chips"><span>Financial Modeling</span><span>NPV · IRR · EVA · MVA</span><span>Forecasting</span><span>KPI Dashboards</span></div></div>
+        <div class="sgroup"><h4>Systems &amp; security</h4>
+          <div class="chips"><span>IBM Maximo</span><span>Oracle EBS</span><span>Cloud Security</span><span>Cybersecurity</span><span>Data Privacy</span></div></div>
+      </div>
+      <div class="card reveal">
+        <div class="sgroup"><h4>Certifications</h4>
+          <div class="certs">
+            <div class="cert"><i>★</i>Certified Associate in Engineering Management (CAEM)</div>
+            <div class="cert"><i>σ</i>Six Sigma Certified</div>
+            <div class="cert"><i>⛨</i>Fortinet Certified Fundamentals, Cybersecurity</div>
+            <div class="cert"><i>▦</i>Foundations of Project Management</div>
+            <div class="cert"><i>⚙</i>Engineering Project Management</div>
+            <div class="cert"><i>∿</i>Machine Learning Workshop</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 EDUCATION ============ -->
+  <section id="education">
+    <div class="eyebrow">Foundation</div>
+    <h2>Education &amp; languages</h2>
+    <div class="edu-grid">
+      <div class="card edu reveal"><div class="ic">🎓</div><div><h3>Rice University</h3><div class="deg">Master's, Engineering Management &amp; Leadership</div><div class="yr">2023 – 2025</div></div></div>
+      <div class="card edu reveal"><div class="ic">⚙️</div><div><h3>Vellore Institute of Technology</h3><div class="deg">Bachelor's, Mechanical Engineering</div></div></div>
+    </div>
+    <div class="langs reveal">
+      <div><b>English</b><span>Full professional</span></div>
+      <div><b>Hindi</b><span>Native / bilingual</span></div>
+      <div><b>German</b><span>Elementary</span></div>
+      <div><b>French</b><span>Elementary</span></div>
+    </div>
+  </section>
+
+  <!-- ============ 07 CONTACT ============ -->
+  <section id="contact">
+    <div class="cta reveal">
+      <div class="eyebrow">Let's talk</div>
+      <h2>Looking for someone who turns data into dollars?</h2>
+      <p>I'm always glad to connect about project management, analytics and operations roles, or anything where technical skills meet real business impact.</p>
+      <div class="btns">
+        <a class="btn primary" href="mailto:shubhvania17@gmail.com">✉ shubhvania17@gmail.com</a>
+        <button class="btn ghost copy" id="copyBtn" type="button">Copy email</button>
+        <a class="btn ghost" href="https://www.linkedin.com/in/shubhvania" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+    <footer><span>© 2026 Shubh Vania</span><span>Houston, Texas · Built with HTML, hosted on GitHub Pages</span></footer>
+  </section>
+</main>
+
+<script>
+  // Reveal on scroll + count-up numbers
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const countUp = el => {
+    const end = parseFloat(el.dataset.count), dec = +(el.dataset.dec || 0);
+    const pre = el.dataset.prefix || '', suf = el.dataset.suffix || '';
+    if (reduce) return;
+    const t0 = performance.now(), dur = 1200;
+    const step = t => {
+      const p = Math.min((t - t0) / dur, 1), v = end * (1 - Math.pow(1 - p, 3));
+      el.textContent = pre + v.toFixed(dec) + suf;
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('in');
+    e.target.querySelectorAll('[data-count]').forEach(countUp);
+    io.unobserve(e.target);
+  }), { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Active nav link
+  const links = document.querySelectorAll('aside nav a');
+  const secs = [...links].map(a => document.querySelector(a.getAttribute('href')));
+  addEventListener('scroll', () => {
+    let cur = secs[0];
+    secs.forEach(s => { if (s.getBoundingClientRect().top < 160) cur = s; });
+    links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur.id));
+  }, { passive: true });
+
+  // Copy email
+  document.getElementById('copyBtn').addEventListener('click', e => {
+    navigator.clipboard?.writeText('shubhvania17@gmail.com').then(() => {
+      e.target.textContent = 'Copied ✓';
+      setTimeout(() => e.target.textContent = 'Copy email', 1800);
+    });
+  });
+</script>
+</body>
+</html>
